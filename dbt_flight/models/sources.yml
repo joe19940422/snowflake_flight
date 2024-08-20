@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+    - name: ods
+      description: This is a snowflake 
+      database: flight
+      schema: ods
+      tables:
+          - name: flights_data_raw
+            description: flights_data_raw

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: ods_flights
+    description: parse json data
+    columns:
+      - name: flight_date
+        description: flight_date
+        tests:
+          - not_null
+          # - unique
+      - name: arrival_delay
+        description: arrival_delay
+        tests:
+          - not_null

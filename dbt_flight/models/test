@@ -1,0 +1,11 @@
+models:
+  - name: ods_flights
+    description: The ods_flights model is a transformation of the raw flight data
+      from the 'flight.ods.flights_data_raw' source. It parses the JSON data to
+      extract specific fields related to flight details. The fields extracted
+      include flight_date, flight_status, departure_airport, departure_delay,
+      departure_icao, departure_iata, arrival_airport, arrival_delay,
+      arrival_icao, arrival_iata, and airline_name. Additionally, a
+      load_timestamp field is added to record the time of data extraction. This
+      model is useful for analyzing flight performance and delays.
+    columns: []
