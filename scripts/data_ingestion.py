@@ -6,7 +6,7 @@ from datetime import datetime
 #Step 1: Fetch the JSON data from the API
 api_url = 'https://api.aviationstack.com/v1/flights'
 params = {
-    'access_key': '6d9483427721b5e480d5e20e17ab05dc',
+    'access_key': '**',
     'flight_status': 'active',
     'limit': 100
 }
@@ -24,8 +24,8 @@ else:
 # Step 2: Connect to Snowflake
 conn = snowflake.connector.connect(
     user='PENGFEIQIAO',
-    password='19940422QPf@',
-    account='fh67946.eu-west-3.aws',
+    password='**',
+    account='**',
     database='flight',
     schema='ods'
 )
