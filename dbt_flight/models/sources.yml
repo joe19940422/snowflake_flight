@@ -1,10 +1,18 @@
 version: 2
 
 sources:
-    - name: ods
+    - name: flight_ods
       description: This is a snowflake 
       database: flight
-      schema: ods
+      schema: flight_ods
       tables:
           - name: flights_data_raw
             description: flights_data_raw
+    
+    - name: flight_dwh
+      description: This is a snowflake 
+      database: flight
+      schema: flight_ods
+      tables:
+          - name: dwh_flights
+            description: flights_data_parsed

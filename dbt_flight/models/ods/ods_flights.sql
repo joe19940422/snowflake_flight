@@ -1,3 +1,5 @@
+{{ config(schema='ods') }}
+
 SELECT 
     PARSE_JSON(data):flight_date::STRING AS flight_date,
     PARSE_JSON(data):flight_status::STRING AS flight_status,
@@ -13,4 +15,4 @@ SELECT
     
     CURRENT_TIMESTAMP() as load_timestamp
     
-FROM {{ source('ods', 'flights_data_raw') }}   --ods.flights_data_raw;
+FROM {{ source('flight_ods', 'flights_data_raw') }}   --flight_ods.flights_data_raw;

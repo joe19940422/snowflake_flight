@@ -1,8 +1,9 @@
--- models/ods/ods_flights.sql
+-- models/dwh/dwh_flights.sql
 
 {{
     config(
-        materialized='table'
+        materialized='table',
+        schema='dwh'
     )
 }}
 

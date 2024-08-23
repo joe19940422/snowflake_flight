@@ -13,7 +13,7 @@ profile: 'dbt_flight'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
-test-paths: ["tests"]
+test-paths: ["data_tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
@@ -32,13 +32,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_flight:
     # Config indicated by + and applies to all files under models/example/
-    +materialized: table
+  
     ods:
-      +materialized: table
-    dwh:
-      +materialized: table
-
-
+      +schema: ods 
       
+    dwh:
+      +schema: dwh
+    
+    mart:
+      +schema: dwh
 
-
+seeds:
+  +schema: ods
