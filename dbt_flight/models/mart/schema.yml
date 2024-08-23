@@ -1,0 +1,48 @@
+models:
+  - name: departure_country_ranking
+    description: "The 'departure_country_ranking' model is a SQL-based model that
+      provides a ranking of departure countries based on the number of flights.
+      The model uses data from the 'dwh_flights' table in the 'flight_dwh'
+      schema of the 'flight' database. The model groups the data by
+      'departure_country_name' and 'FLIGHT_DATE', and orders the data in
+      descending order based on the count of flights. The model returns three
+      columns: 'departure_country_name', 'FLIGHT_DATE', and 'cn' which
+      represents the count of flights."
+    columns:
+      - name: departure_country_name
+        description: The name of the country from which the flight departs.
+        data_type: varchar
+      - name: flight_date
+        description: The date on which the flight departs. The date is in the format
+          YYYY-MM-DD.
+        data_type: varchar
+        tests:
+          - not_null
+      - name: cn
+        description: The count of flights departing from the specific country on the
+          specific date.
+        data_type: number
+        tests:
+          - not_null
+  - name: arrival_country_ranking
+    description: "The 'arrival_country_ranking' model is a SQL-based model that
+      provides a ranking of countries based on the number of flights arriving in
+      each country. The model uses data from the 'dwh_flights' table in the
+      'flight_dwh' database. The model groups the data by 'ARRIVAL_COUNTRY_NAME'
+      and 'FLIGHT_DATE', and counts the number of flights for each group. The
+      result is then ordered in descending order by the count of flights. The
+      model returns three columns: 'ARRIVAL_COUNTRY_NAME', 'FLIGHT_DATE', and
+      'cn' which represents the count of flights."
+    columns:
+      - name: arrival_country_name
+        description: The name of the country where the flight arrived.
+        data_type: varchar
+      - name: flight_date
+        description: The date when the flight took place.
+        data_type: varchar
+      - name: cn
+        description: The count of flights that arrived in the specified country on the
+          specified date.
+        data_type: number
+        tests:
+          - not_null
