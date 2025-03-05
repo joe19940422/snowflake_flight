@@ -25,6 +25,9 @@ This project implements an Operational Data Store (ODS) in Snowflake to ingest, 
 ### Prerequisites
 
 - **Snowflake Account**: A Snowflake account with the necessary privileges to create schemas, tables, and load data.
+<p align="center">
+  <a href="https://app.snowflake.com/"><img src="assets/picture/snowflake.png" alt="Snowflake" style="width: 975px;"></a>
+</p>
 - **Python 3.x**: Python environment with the following packages installed:
   - `requests`
   - `snowflake-connector-python`
@@ -63,7 +66,16 @@ This project implements an Operational Data Store (ODS) in Snowflake to ingest, 
    ```sql
    SELECT * FROM ods.flights_data_raw;
    ```
+6. **DBT cloud**: 
+   Use dbt labs schdule a job every day
+   <p align="center">
+   <a href="https://app.snowflake.com/"><img src="assets/picture/dbt_cloud.png" alt="dbt" style="width: 975px;"></a>
+   </p>
 
+7. *Data Lineage*
+   <p align="center">
+   <a href="https://app.snowflake.com/"><img src="assets/picture/dbt_lineage.png" alt="dbt" style="width: 975px;"></a>
+   </p>
 ### Usage
 
 - **Real-Time Data Ingestion**: The Python script can be scheduled to run periodically using cron jobs, Airflow, or any other scheduler to continuously ingest new data from the API.
