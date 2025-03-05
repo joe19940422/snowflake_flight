@@ -1,7 +1,0 @@
--- {% macro get_table_name(table_name) %}
---     {% if target.name == 'env' %}
---         {{ ref(table_name ~ '_env') }}
---     {% else %}
---         {{ ref(table_name ~ '_prod') }}
---     {% endif %}
--- {% endmacro %}
