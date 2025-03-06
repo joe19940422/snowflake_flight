@@ -40,7 +40,7 @@ models:
       +schema: dwh
     
     mart:
-      +schema: dwh
+      +schema: mart
 
 seeds:
   +schema: ods
