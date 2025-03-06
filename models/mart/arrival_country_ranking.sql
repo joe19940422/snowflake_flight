@@ -20,6 +20,6 @@ WHERE last_updated > (SELECT MAX(last_updated) FROM {{ this }})
 GROUP BY
     ARRIVAL_COUNTRY_NAME,
     FLIGHT_DATE,
-    FLIGHT_NUMBER  # Include in GROUP BY clause
+    FLIGHT_NUMBER
 ORDER BY
     cn DESC
