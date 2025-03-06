@@ -22,8 +22,8 @@ with dwh_flights as (
         f.arrival_icao,
         f.arrival_iata,
         i1.iso_country as arrival_country,
-        f.airline_name
-
+        f.airline_name,
+        f.flight_number
     from {{ ref('ods_flights') }} as f
     left join {{ ref('icata') }} as i
     on f.departure_iata = i.iata_code

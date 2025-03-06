@@ -12,7 +12,7 @@ SELECT
     PARSE_JSON(data):arrival:icao::STRING AS arrival_icao,
     PARSE_JSON(data):arrival:iata::STRING AS arrival_iata,
     PARSE_JSON(data):airline:name::STRING AS airline_name,
-    
+    PARSE_JSON(data):flight:number::STRING AS flight_number,
     CURRENT_TIMESTAMP() as load_timestamp
     
 FROM {{ source('flight_ods', 'flights_data_raw') }}   --flight_ods.flights_data_raw;
