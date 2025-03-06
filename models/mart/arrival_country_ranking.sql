@@ -1,7 +1,7 @@
 
 {{ config(
     materialized='incremental',
-    unique_key=['ARRIVAL_COUNTRY_NAME', 'FLIGHT_DATE', 'FLIGHT_NUMBER'],  # Add FLIGHT_NUMBER
+    unique_key=['ARRIVAL_COUNTRY_NAME', 'FLIGHT_DATE', 'FLIGHT_NUMBER'],
     incremental_strategy='upsert'
 ) }}
 
