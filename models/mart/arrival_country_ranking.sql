@@ -1,13 +1,11 @@
 
 {{ config(
     materialized='incremental',
-    unique_key=['ARRIVAL_COUNTRY_NAME', 'FLIGHT_DATE', 'FLIGHT_NUMBER'],
-    incremental_strategy='merge'
+    incremental_strategy='append'
 ) }}
 
 SELECT
     ARRIVAL_COUNTRY_NAME,
-    FLIGHT_NUMBER,
     FLIGHT_DATE,
     COUNT(*) AS cn,
     CURRENT_TIMESTAMP() as last_updated
@@ -21,6 +19,5 @@ WHERE last_updated > (SELECT MAX(last_updated) FROM {{ this }})
 GROUP BY
     ARRIVAL_COUNTRY_NAME,
     FLIGHT_DATE,
-    FLIGHT_NUMBER
 ORDER BY
     cn DESC
