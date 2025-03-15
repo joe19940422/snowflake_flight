@@ -1,8 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key=['DEPARTURE_COUNTRY_NAME', 'FLIGHT_DATE', 'cn']
+) }}
 
-select 
-departure_country_name, 
-FLIGHT_DATE, 
-count(*) as cn 
-from {{ ref('dwh_flights') }}
-group by departure_country_name, FLIGHT_DATE order by cn desc 
+SELECT
+    DEPARTURE_COUNTRY_NAME,
+    FLIGHT_DATE,
+    COUNT(*) AS cn,
+    CURRENT_TIMESTAMP() AS last_updated
+FROM
+    {{ ref('dwh_flights') }}
+GROUP BY
+    DEPARTURE_COUNTRY_NAME,
+    FLIGHT_DATE
