@@ -7,7 +7,7 @@ models:
       'departure_country_name' and 'FLIGHT_DATE', and orders the data in
       descending order based on the count of flights. The model returns three
       columns: 'departure_country_name', 'FLIGHT_DATE', and 'cn' which
-      represents the count of flights."
+      represents the count of flights ## this is from ai tool."
     columns:
       - name: departure_country_name
         description: The name of the country from which the flight departs.
